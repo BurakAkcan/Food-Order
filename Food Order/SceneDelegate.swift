@@ -15,15 +15,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        if defaults.bool(forKey: "firstOpen"){
-            let board = UIStoryboard(name: "Main", bundle: nil)
-            let navigationVC = board.instantiateViewController(withIdentifier: "homeNC") as! UINavigationController
-            window?.rootViewController = navigationVC   
-        }
+      firstOpen()
         guard let _ = (scene as? UIWindowScene) else { return }
     }
     func firstOpen(){
-       
+        if defaults.bool(forKey: "firstOpen"){
+            let board = UIStoryboard(name: "Main", bundle: nil)
+            let navigationVC = board.instantiateViewController(withIdentifier: "homeNC") as! UINavigationController
+            window?.rootViewController = navigationVC
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
