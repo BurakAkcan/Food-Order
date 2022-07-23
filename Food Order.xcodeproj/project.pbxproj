@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		54CFB8CA288BEF7900BFD28F /* OnbardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CFB8C9288BEF7900BFD28F /* OnbardingCollectionViewCell.swift */; };
+		54CFB8CD288C2BB600BFD28F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CFB8CC288C2BB600BFD28F /* HomeViewController.swift */; };
 		54EE469B288B42510066A677 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EE469A288B42510066A677 /* AppDelegate.swift */; };
 		54EE469D288B42510066A677 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EE469C288B42510066A677 /* SceneDelegate.swift */; };
 		54EE46A2288B42510066A677 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54EE46A0288B42510066A677 /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		54CFB8C9288BEF7900BFD28F /* OnbardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbardingCollectionViewCell.swift; sourceTree = "<group>"; };
+		54CFB8CC288C2BB600BFD28F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		54EE4697288B42510066A677 /* Food Order.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Food Order.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		54EE469A288B42510066A677 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54EE469C288B42510066A677 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +84,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		54CFB8CB288C2BA000BFD28F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				54CFB8CC288C2BB600BFD28F /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		54EE468E288B42510066A677 = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +157,7 @@
 		54EE46CD288B5C780066A677 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				54CFB8CB288C2BA000BFD28F /* Home */,
 				54EE46CF288B5C950066A677 /* OnboardingScreen */,
 			);
 			path = View;
@@ -312,6 +323,7 @@
 				54EE469B288B42510066A677 /* AppDelegate.swift in Sources */,
 				54EE469D288B42510066A677 /* SceneDelegate.swift in Sources */,
 				54EE46D4288B60F50066A677 /* UIView+Extension.swift in Sources */,
+				54CFB8CD288C2BB600BFD28F /* HomeViewController.swift in Sources */,
 				54EE46D1288B5CC00066A677 /* OnboardingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

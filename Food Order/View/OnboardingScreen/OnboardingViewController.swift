@@ -18,7 +18,7 @@ class OnboardingViewController: UIViewController {
     
     //MARK: -Properties
     
-    //Second open app skip onboarding screen
+    //run secondly app skip onboarding screen
     let defaults = UserDefaults.standard
     var slides:[OnboardingSlide] = []
     var currentPage = 0  {
