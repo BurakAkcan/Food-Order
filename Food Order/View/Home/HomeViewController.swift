@@ -12,6 +12,9 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     
     @IBOutlet weak var popularCollectionView: UICollectionView!
+    
+    @IBOutlet weak var specialCollectionView: UICollectionView!
+    
     //MARK: Properties
     var categories:[DishCategory] = [
        
@@ -25,10 +28,19 @@ class HomeViewController: UIViewController {
     var populars:[Dish] = [
         
         Dish(id: "id1", description: "Food", name: "Kebab", image: "https://picsum.photos/100/100", calories: 1.245),
-        Dish(id: "id2", description: "Chef", name: "Soup", image: "https://picsum.photos/100/100", calories: 2.380),
+        Dish(id: "id2", description: "This is best food for dinner This is best food for dinner This is best food for dinner This is best food for dinner This is best food for dinner", name: "Soup", image: "https://picsum.photos/100/100", calories: 2.380),
         Dish(id: "id3", description: "Drink", name: "Ayran", image: "https://picsum.photos/100/100", calories: 0.400),
         Dish(id: "id4", description: "Branch", name: "Honey", image: "https://picsum.photos/100/100", calories: 0.800)
         
+    ]
+    
+    var specials:[Dish] = [
+        Dish(id: "1", description: "perfect food", name: "Chef Special", image: "https://picsum.photos/100/100", calories: 1.234),
+        Dish(id: "2", description: "not good food", name: "Chef Nigt Meat", image: "https://picsum.photos/100/100", calories: 2.200),
+        Dish(id: "3", description: "good food", name: "Chefs vegetarian", image: "https://picsum.photos/100/100", calories: 0.450),
+        Dish(id: "4", description: "bad food", name: "Chefs fish in fire", image: "https://picsum.photos/100/100", calories: 1.440),
+        Dish(id: "5", description: "not bad food", name: "Chefs Turkey", image: "https://picsum.photos/100/100", calories: 1.800)
+    
     ]
     
     
@@ -45,6 +57,8 @@ class HomeViewController: UIViewController {
     private func registerCell(){
         categoryCollectionView.register(UINib(nibName: CategoryCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier)
         popularCollectionView.register(UINib(nibName: DishPortraitCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: DishPortraitCollectionViewCell.identifier)
+        specialCollectionView.register(UINib(nibName: DishLandCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: DishLandCollectionViewCell.identifier)
+        
     }
     
 }
@@ -57,6 +71,8 @@ extension HomeViewController:UICollectionViewDelegate,UICollectionViewDataSource
             return categories.count
         case popularCollectionView:
             return populars.count
+        case specialCollectionView:
+            return specials.count
         default:
             return 0
         }
@@ -77,12 +93,29 @@ extension HomeViewController:UICollectionViewDelegate,UICollectionViewDataSource
             let item = populars[indexPath.row]
             cell.setUp(dish: item)
             return cell
+        case specialCollectionView:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DishLandCollectionViewCell.identifier, for: indexPath) as! DishLandCollectionViewCell
+            let item = specials[indexPath.row]
+            cell.setUp(dish: item)
+            return cell
         default:
             return UICollectionViewCell()
         }
         
         
         
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == categoryCollectionView{
+            let controller = ListDishesViewController.instantiate()
+            controller.category = categories[indexPath.row]
+            navigationController?.pushViewController(controller, animated: true)
+        }else{
+            let controller = DishDetailViewController.instantiate()
+            controller.dish = collectionView == popularCollectionView ? populars[indexPath.row] : specials[indexPath.row]
+            navigationController?.pushViewController(controller, animated: true)
+        }
     }
     
     

@@ -12,5 +12,9 @@ extension String {
     }
 }
 
-
+extension String {
+    var urlYap:URL?{
+        return URL(string: self)
+    }
+}
 

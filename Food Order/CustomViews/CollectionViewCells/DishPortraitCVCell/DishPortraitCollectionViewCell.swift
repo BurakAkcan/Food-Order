@@ -16,6 +16,7 @@ class DishPortraitCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var disImageView: UIImageView!
     
     static let identifier = "DishPortraitCollectionViewCell"
+    
    
     
     func setUp(dish:Dish){
