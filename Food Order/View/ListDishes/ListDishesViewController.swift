@@ -35,7 +35,7 @@ class ListDishesViewController: UIViewController {
 
 }
 
-extension ListDishesViewController:UITableViewDelegate,UITableViewDataSource{
+    extension ListDishesViewController:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dishes.count

@@ -49,6 +49,12 @@ class HomeViewController: UIViewController {
         categoryCollectionView.delegate = self
         categoryCollectionView.dataSource = self
         registerCell()
+        
+        let service = NetworkService()
+        
+        let request = service.createRequest(route: .temp, method: .post, parameter: ["firtname":"burak","lastname":"Akcan"])
+        print(request!.url!)
+        print(request?.httpBody)
        
 
     }
